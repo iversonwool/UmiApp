@@ -52,6 +52,33 @@ export default () => {
 
   identity(2)
 
+
+
+  interface Point {
+    x: number;
+    y: number;
+  }
+
+  function aaaaa(x: unknown) {
+
+  }
+
+  type Predicate = (x: unknown) => boolean;
+  type K = ReturnType<Predicate>;
+
+  type P = keyof Point
+
+
+  interface Animal {
+    live:() => void;
+    live1(): void;
+  }
+
+  type Animal1 = {
+    a(): void;
+    b(): void;
+  }
+
   return (
     <div>
       <h1 className={styles.title}>Page index</h1>
