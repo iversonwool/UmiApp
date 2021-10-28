@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {Button} from 'antd'
+import {connect} from 'dva'
 import styles from './index.less';
 
 //generic types
@@ -21,7 +23,15 @@ class GenericClass<T> {
 //keyof
 
 
-export default () => {
+export default connect(({home})=>({home}))((props) => {
+  console.log('home', props.home)
+
+  useEffect(() => {
+    props.dispatch({
+      type: 'home/fetchUser'
+    })
+  }, [])
+
 
   const instance = new GenericClass<number>();
   instance.one = 1;
@@ -82,6 +92,8 @@ export default () => {
   return (
     <div>
       <h1 className={styles.title}>Page index</h1>
+
+      <Button type="primary">Primary Button</Button>
     </div>
   );
-}
+})
