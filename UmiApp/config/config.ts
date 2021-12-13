@@ -1,7 +1,10 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  routes: [{ path: '/', component: './index' }],
+  routes: [
+    { path: '/', component: './index' },
+    { path: '/dndpg', component: './dndpg'}
+  ],
 
   antd: {},
   dva: {},
