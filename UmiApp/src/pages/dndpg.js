@@ -56,9 +56,9 @@ class SortableComponent extends Component {
     ],
   };
   onSortEnd = (props) => {
-    this.setState(({items}) => ({
-      items: arrayMove(items, props.oldIndex, props.newIndex),
-    }));
+    // this.setState(({items}) => ({
+    //   items: arrayMove(items, props.oldIndex, props.newIndex),
+    // }));
     console.log('--', props);
   };
   render() {

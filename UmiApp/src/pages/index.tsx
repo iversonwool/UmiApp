@@ -30,7 +30,7 @@ export default connect(({home})=>({home}))((props) => {
     props.dispatch({
       type: 'home/fetchUser'
     })
-  }, [])
+  }, [props.dispatch])
 
 
   const instance = new GenericClass<number>();
