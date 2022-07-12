@@ -22,10 +22,19 @@ class GenericClass<T> {
 //extends
 //keyof
 
+class MyClass {
+  [s: string]: boolean | ((s: string) => boolean)
+
+  s = (a: string) => true;
+  check(a: string) {
+    return this[a] as boolean
+  }
+}
+
 
 export default connect(({home})=>({home}))((props) => {
   console.log('home', props.home)
-
+  console.log('sha', new MyClass().check('s'))
   useEffect(() => {
     props.dispatch({
       type: 'home/fetchUser'
