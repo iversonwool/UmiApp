@@ -98,6 +98,8 @@ export default connect(({home})=>({home}))((props) => {
     b(): void;
   }
 
+  // const h1Ref = React.useRef<HTMLHeadingElement | null>(null)
+  // (h1Ref.current as HTMLHeadingElement)
   return (
     <div>
       <h1 className={styles.title}>Page index</h1>
