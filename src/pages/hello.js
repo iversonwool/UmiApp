@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Button, Space } from 'antd';
+import PropTypes from 'prop-types'
 
 let i = 2;
 
@@ -35,11 +36,19 @@ const initialState = [
   { id: 1, a: 'fdjafjdls;ajf;ds', b: 'kdjksjfakdsj' },
 ];
 
+
+function TestProps(props) {
+  const {name} = props
+  return <div>test props</div>
+}
+
 function Hello() {
   const [dataSource, dispatch] = React.useReducer(reducer, initialState);
 
   return (
     <div style={{ backgroundColor: '#987', padding: 10 }}>
+
+      <TestProps name={'xxx'} />
       <Space style={{ padding: '0 0 5px' }}>
         <Button
           onClick={() => {
@@ -88,6 +97,10 @@ function Hello() {
       />
     </div>
   );
+}
+
+TestProps.propTypes = {
+  name: PropTypes.array,
 }
 
 export default Hello;

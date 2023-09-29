@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react';
+import Person from '../components/decorator'
+
 import {Button} from 'antd'
 import {connect} from 'dva'
 import styles from './index.less';
@@ -35,12 +37,15 @@ class MyClass {
 export default connect(({home})=>({home}))((props) => {
   console.log('home', props.home)
   console.log('sha', new MyClass().check('s'))
-  useEffect(() => {
-    props.dispatch({
-      type: 'home/fetchUser'
-    })
-  }, [props.dispatch])
-
+  // useEffect(() => {
+  //   props.dispatch({
+  //     type: 'home/fetchUser'
+  //   })
+  // }, [props.dispatch])
+  console.log('-', Person.isTestable)
+  const p1 = new Person('leehow')
+  p1.name = 'ddd'
+  console.log('p1 name', p1.name)
 
   const instance = new GenericClass<number>();
   instance.one = 1;
